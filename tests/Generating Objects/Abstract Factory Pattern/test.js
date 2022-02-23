@@ -2,11 +2,15 @@ const test = require('ava');
 const FactoryProducer = require('../../../src/Generating Objects/Abstract Factory Pattern');
 
 test('[FactoryPattern] Testing the creation', async t => {
-  const factory1 = FactoryProducer.create('Type');
-  const type = factory1.create('Type1')
+  const factory1 = FactoryProducer.create('FactoryA');
+  const typeA1 = factory1.createType();
+  const colorB1 = factory1.createColor();
 
-  const factory2 = FactoryProducer.create('Color');
-  const color = factory2.create('Color2')
-	t.is(type.info(), "I'm the type: Type1");
-  t.is(color.info(), "I'm the color: Color2");
+  const factory2 = FactoryProducer.create('FactoryB');
+  const typeA2 = factory2.createType();
+  const colorB2 = factory2.createColor();
+	t.is(typeA1.infoType(), "I'm the type: Type1");
+  t.is(colorB1.infoColor(), "I'm the color: Color2");
+	t.is(typeA2.infoType(), "I'm the type: Type2");
+  t.is(colorB2.infoColor(), "I'm the color: Color1");
 });

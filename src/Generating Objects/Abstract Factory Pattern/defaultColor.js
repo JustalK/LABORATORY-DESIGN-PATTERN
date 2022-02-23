@@ -1,10 +1,10 @@
-class DefaultType {
+class DefaultColor {
   constructor(name) {
     this.name = name;
   }
 
-  info() {
+  infoColor() {
     return `I'm the color: ${this.name}`;
   }
 }
-module.exports = DefaultType;
+module.exports = DefaultColor;

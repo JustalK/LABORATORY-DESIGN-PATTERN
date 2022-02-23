@@ -1,13 +1,13 @@
-const TypeFactory = require('./TypeFactory');
-const ColorFactory = require('./ColorFactory');
+const FactoryA = require('./FactoryA');
+const FactoryB = require('./FactoryB');
 
 class FactoryProducer {
   create(type) {
     switch (type) {
-      case 'Type':
-        return new TypeFactory();
-      case 'Color':
-        return new ColorFactory();
+      case 'FactoryA':
+        return new FactoryA();
+      case 'FactoryB':
+        return new FactoryB();
       default: {
           console.log('Unknown Factory.');
       }
