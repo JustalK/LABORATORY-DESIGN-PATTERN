@@ -1,5 +1,8 @@
-class DefaultType {
+const DefaultAbstract = require('./defaultAbstract');
+
+class DefaultType extends DefaultAbstract {
   constructor(name) {
+    super();
     this.name = name;
   }
 
