@@ -1,0 +1,27 @@
+{
+  "name": "laboratory-design-pattern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://justalk: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@github.com/justalk/TEMPLATE-DESIGN-PATTERN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justalk/TEMPLATE-DESIGN-PATTERN/issues"
+  },
+  "homepage": "https://github.com/justalk/TEMPLATE-DESIGN-PATTERN#readme",
+  "dependencies": {
+    "ava": "^4.0.1"
+  },
+  "ava": {
+		"files": [
+			"tests/**/*"
+		]
+  }
+}
