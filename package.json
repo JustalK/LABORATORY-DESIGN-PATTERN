@@ -17,11 +17,17 @@
   },
   "homepage": "https://github.com/justalk/TEMPLATE-DESIGN-PATTERN#readme",
   "dependencies": {
-    "ava": "^4.0.1"
+    "ava": "^4.0.1",
+    "module-alias": "^2.2.2"
   },
   "ava": {
-		"files": [
-			"tests/**/*"
-		]
+    "files": [
+      "tests/*",
+      "!test/cases"
+    ]
+  },
+  "_moduleAliases": {
+    "@src": "./src",
+    "@test": "./tests"
   }
 }
