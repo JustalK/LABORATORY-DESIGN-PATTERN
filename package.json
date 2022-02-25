@@ -18,16 +18,20 @@
   "homepage": "https://github.com/justalk/TEMPLATE-DESIGN-PATTERN#readme",
   "dependencies": {
     "ava": "^4.0.1",
-    "module-alias": "^2.2.2"
+    "dotenv": "^16.0.0",
+    "module-alias": "^2.2.2",
+    "mongodb-memory-server": "^8.4.0",
+    "mongoose": "^6.2.3"
   },
   "ava": {
     "files": [
-      "tests/*",
-      "!test/cases"
+      "test/*",
+      "!test/cases",
+      "!test/libs"
     ]
   },
   "_moduleAliases": {
     "@src": "./src",
-    "@test": "./tests"
+    "@test": "./test"
   }
 }
