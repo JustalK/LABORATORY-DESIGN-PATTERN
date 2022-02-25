@@ -3,14 +3,22 @@ const test = require('ava');
 const MapperDataUser = require('@src/Database Pattern/Data Mapper/MapperUser');
 
 const cases = (test) => {
-  test('[DataMapper] Testing the mapping of data on user', async t => {
+  test('[DataMapper] Testing the mapping of data on user with creation', async t => {
     const MapperUser = new MapperDataUser();
-    const user_add = MapperUser.add();
-    const user_delete = MapperUser.delete();
-    const user_search = MapperUser.search();
-    t.is(user_add.info, '[Add] Kevin');
-    t.is(user_delete.info, '[Delete] Kevin');
-    t.is(user_search.info, '[Search] Kevin');
+    const user_add = await MapperUser.add({
+      firstname: 'Ava',
+      lastname: 'Longoria',
+      age: 10
+    });
+    t.is(user_add.firstname, 'Ava');
+    t.is(user_add.lastname, 'Longoria');
+    t.is(user_add.age, 10);
+  });
+
+  test('[DataMapper] Testing the mapping of data on user with getting', async t => {
+    const MapperUser = new MapperDataUser();
+    const users = await MapperUser.getAll();
+    t.is(users.length, 2);
   });
 }
 

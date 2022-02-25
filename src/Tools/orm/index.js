@@ -5,20 +5,16 @@ class ORM {
     this.model = model;
   }
 
-  get() {
-    return new this.model('[Get] Kevin');
+  get(id) {
+    return new this.model.find({ id });
   }
 
-  add() {
-    return new this.model('[Add] Kevin');
+  add(user) {
+    return new this.model.create(user);
   }
 
-  delete() {
-    return new this.model('[Delete] Kevin');
-  }
-
-  search() {
-    return new this.model('[Search] Kevin');
+  search(find) {
+    return new this.model.find();
   }
 }
 

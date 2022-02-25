@@ -6,6 +6,7 @@ const { performance } = require('perf_hooks')
 
 const test = require('ava')
 const mongo = require('@test/libs/mongo')
+const m_seeding = require('@seeding/seeder')
 
 const test_0 = require('@test/cases/Generating Objects/Abstract Factory Pattern/test')
 const test_1 = require('@test/cases/Generating Objects/Factory Pattern/test')
@@ -21,6 +22,7 @@ test.before(async () => {
 
 test.before(async () => {
   const uri = await mongo.connect()
+  await m_seeding.seed('test', uri)
 })
 
 test.after(async () => {
