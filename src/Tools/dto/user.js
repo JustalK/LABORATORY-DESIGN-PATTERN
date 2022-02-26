@@ -20,6 +20,10 @@ const schema = new mongoose.Schema({
   age: {
     type: Number,
     required: true
+  },
+  relation: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: filename
   }
 }, {
   timestamps: {
