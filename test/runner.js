@@ -36,7 +36,7 @@ test.after(async () => {
 })
 
 test_4.cases(test)
-// test_2.cases(test)
-// test_1.cases(test)
-// test_0.cases(test)
-// test_3.cases(test)
+test_2.cases(test)
+test_1.cases(test)
+test_0.cases(test)
+test_3.cases(test)
