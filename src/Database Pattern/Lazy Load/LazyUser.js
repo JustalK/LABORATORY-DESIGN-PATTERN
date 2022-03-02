@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const User = require('@src/Tools/dto/user')
 
-class Lazy {
+class LazyUser {
   constructor() {
     this.apply("N/A", "N/A", "N/A", "N/A")
   };
@@ -19,4 +19,4 @@ class Lazy {
   }
 };
 
-module.exports = Unit;
+module.exports = LazyUser;
