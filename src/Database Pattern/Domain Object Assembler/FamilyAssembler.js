@@ -1,19 +1,18 @@
 const User = require('@src/Tools/dto/user')
 
 class FamilyAssembler {
-  private constructor() {
-    this.firstnameBrother = brother.firstname
-    this.lastnameBrother = brother.lastname
-    this.firstnameSister = sister.firstname
-    this.lastnameSister = sister.lastname
-  }
-
-  static async fetchUser(findBrother, findSister) {
+  constructor(findBrother, findSister) {
+    return (async () => {
       const brother = await User.findOne(findBrother)
       const sister = await User.findOne(findSister)
 
-      // Invoke the private constructor...
-      return new Person(brother, sister);
+      this.firstnameBrother = brother.firstname
+      this.lastnameBrother = brother.lastname
+      this.firstnameSister = sister.firstname
+      this.lastnameSister = sister.lastname
+
+      return this;
+    })();
   }
 };
 
