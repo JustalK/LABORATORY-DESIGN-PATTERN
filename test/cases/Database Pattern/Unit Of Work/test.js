@@ -1,6 +1,7 @@
 require('module-alias/register')
-const test = require('ava');
-const Unit = require('@src/Database Pattern/Unit Of Work/Unit');
+const test = require('ava')
+const Unit = require('@src/Database Pattern/Unit Of Work/Unit')
+const Unit2 = require('@src/Database Pattern/Unit Of Work/Unit2')
 const User = require('@src/Tools/dto/user')
 
 const cases = (test) => {
@@ -33,6 +34,15 @@ const cases = (test) => {
     const userA = await User.findOne({ firstname: 'A' });
     const userB = await User.findOne({ firstname: 'B' });
     t.is(userA, null);
+  });
+
+  test('[UnitOfWork] Testing the unit of work 2', async t => {
+    const Transaction = new Unit2();
+    await Transaction.transaction();
+    const userC = await User.findOne({ firstname: 'C' });
+    const userD = await User.findOne({ firstname: 'D' });
+    t.not(userC, undefined)
+    t.not(userD, undefined)
   });
 }
 
