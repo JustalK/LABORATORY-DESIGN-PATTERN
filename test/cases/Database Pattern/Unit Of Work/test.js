@@ -39,10 +39,16 @@ const cases = (test) => {
   test('[UnitOfWork] Testing the unit of work 2', async t => {
     const Transaction = new Unit2();
     await Transaction.transaction();
+    const userRobert = await User.findOne({ firstname: 'Robert' });
     const userC = await User.findOne({ firstname: 'C' });
     const userD = await User.findOne({ firstname: 'D' });
-    t.not(userC, undefined)
-    t.not(userD, undefined)
+    t.is(userRobert.firstname, 'Robert');
+    t.is(userRobert.age, 50);
+    t.is(userC.lastname, 'C');
+    t.is(userC.age, 22);
+    t.is(userD.firstname, 'D');
+    t.is(userD.lastname, 'D');
+    t.is(userD.age, 23);
   });
 }
 

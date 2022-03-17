@@ -5,18 +5,34 @@ class Unit2 {
   async transaction() {
     try {
       const update = await User.bulkWrite([
-        insertOne: {
-          document: {
-            firstname: 'C',
-            lastname: 'C',
-            age: 22
+        {
+          insertOne: {
+            document: {
+              firstname: 'C',
+              lastname: 'C',
+              age: 22
+            }
           }
         },
-        insertOne: {
-          document: {
-            firstname: 'D',
-            lastname: 'D',
-            age: 23
+        {
+          insertOne: {
+            document: {
+              firstname: 'D',
+              lastname: 'D',
+              age: 23
+            }
+          }
+        },
+        {
+          updateOne: {
+            "filter": {
+              "firstname": "Robert"
+            },
+            "update": {
+              $set: {
+                "age": 50
+              }
+            }
           }
         }
       ]);
