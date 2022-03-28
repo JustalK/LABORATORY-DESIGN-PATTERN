@@ -133,6 +133,18 @@ A very nice one to use everytime !
 - Increase the size of document
 ```
 
+#### Subset Pattern
+
+```
+*PRO*
+- Reduce disk access time
+- Reduce the size of document
+- Reduce the number of join
+
+*CONS*
+- Need to maintain the subset which keep the data on every update/save
+```
+
 #### Schema Versioning Pattern
 
 This pattern should be utilized in every database.
