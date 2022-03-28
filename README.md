@@ -123,6 +123,16 @@ A very nice one to use everytime !
 - Harder to implement
 ```
 
+#### Polymorphic Pattern
+
+```
+*PRO*
+- Reduce the number of read
+
+*CONS*
+- Increase the size of document
+```
+
 #### Schema Versioning Pattern
 
 This pattern should be utilized in every database.
