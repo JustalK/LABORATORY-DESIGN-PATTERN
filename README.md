@@ -1,5 +1,7 @@
 # LABORATORY-DESIGN-PATTERN
 
+This project is a documentation for sharing some of the pattern I use in my different project and some patern I consider interesting to know. You might find the same information on differente pages accros the web, I try to make a list at one place that I can easily consultate from time to time.
+
 ## Plan
 
 ## Patterns
@@ -7,9 +9,38 @@
 ### Database Pattern
 
 #### Data Mapper
+
+```
+*PRO*
+- Easy to implement
+- Reduce the tech debt in case of change of ORM/ODM
+```
+
 #### Domain Object Assembler
+
+```
+*PRO*
+- Reduce the number of data and collection in the database
+*CONS*
+- Increase the number of read
+```
+
 #### Lazy Load
+
+```
+*PRO*
+- Can reduce simultaneous read at the database
+```
+
 #### Unit of Work
+
+A very nice one to use everytime !
+
+```
+*PRO*
+- Reduce the load on the database by grouping queries with bulk
+- Reduce the number of inconsistencies by allowing to rollback with transaction
+```
 
 ### Generating Objects
 
